@@ -1,24 +1,21 @@
-﻿namespace ParkhausApp
+﻿using System.Threading.Tasks;
+
+namespace ParkhausApp
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        
 
         public MainPage()
         {
-            InitializeComponent();
+           InitializeComponent();
         }
-
-        private void OnCounterClicked(object? sender, EventArgs e)
+        private async void OpenBarrier(object sender, EventArgs e)
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            barrier.Text = "Schranke offen";
+            await DisplayAlert("Meldung", "Du hast erfolgreich ein Ticket gelöst und kannst nun einfahren", "OK");
         }
+
+
     }
 }
