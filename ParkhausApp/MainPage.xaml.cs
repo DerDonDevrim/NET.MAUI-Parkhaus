@@ -1,19 +1,33 @@
-﻿using System.Threading.Tasks;
+﻿using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
 namespace ParkhausApp
 {
     public partial class MainPage : ContentPage
     {
-        
+        private Ticket? _currentTicket;
+        private int _nextTicketNumber = 0;
 
         public MainPage()
         {
            InitializeComponent();
+           
+           
         }
         private async void OpenBarrier(object sender, EventArgs e)
         {
             barrier.Text = "Schranke offen";
-            await DisplayAlert("Meldung", "Du hast erfolgreich ein Ticket gelöst und kannst nun einfahren", "OK");
+            _currentTicket = new Ticket
+            {
+                ticketNr = _nextTicketNumber++,
+                entryTime = DateTime.Now,
+                isPaid = false
+
+            };
+            await DisplayAlert("Ticket", "Du hast erfolgreich ein Ticket gelöst und kannst nun einfahren", "OK");
+            await Navigation.PushAsync(new TicketDetailPage(_currentTicket));
+
+            barrier.Text = "Schranke geschlossen";
         }
 
 
