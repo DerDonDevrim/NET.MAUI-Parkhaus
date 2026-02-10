@@ -25,7 +25,7 @@ namespace ParkhausApp
 
             };
             await DisplayAlert("Ticket", "Du hast erfolgreich ein Ticket gelöst und kannst nun einfahren", "OK");
-            await Navigation.PushAsync(new TicketDetailPage(_currentTicket));
+            await Navigation.PushAsync(new Dashboard(_currentTicket));
 
             barrier.Text = "Schranke geschlossen";
         }
