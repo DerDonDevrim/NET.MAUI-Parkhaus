@@ -10,18 +10,8 @@ public partial class TicketDetailPage : ContentPage
 		ticketNumberLabel.Text = $"Ticket Nummer: {_ticket.ticketNr}";
 		entryTimeLabel.Text = $"Eintrittszeit: {_ticket.entryTime}";
         isPaidLabel.Text = $"Status: {_ticket.isPaid}";
-		_ticket.price = calculate();
-        priceLabel.Text = $"Preis: {_ticket.price}";
-
 
     }
-	public double calculate()
-	{
-        var time = DateTime.Now - _ticket.entryTime;
-        var timeMinute = Math.Floor(time.TotalMinutes);
-		double price = timeMinute / 1 * 2;
-		return price;
-	}
 
 	private async void PayButton(object sender, EventArgs e)
 	{
