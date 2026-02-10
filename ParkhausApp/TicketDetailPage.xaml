@@ -8,6 +8,7 @@
         <Label x:Name="ticketNumberLabel"  Text="Ticket Nummer"/>
         <Label x:Name="entryTimeLabel" Text="Eintritts Zeit"/>
         <Label x:Name="isPaidLabel" Text="Status"/>
+        <Label x:Name="priceLabel" Text=""/>
         <Button Text="Bezahlen"
                 Clicked="PayButton"/>
     </VerticalStackLayout>
