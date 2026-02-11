@@ -7,14 +7,16 @@ public partial class Dashboard : ContentPage
 	{
 		InitializeComponent();
 		_ticket = ticket;
-	}
+    }
 
 	protected override void OnAppearing()
 	{
 		base.OnAppearing();
 		CurrentTime();
 		CurrentPrice();
-
+        ticketNumberLabel.Text = $"Ticket Nummer: {_ticket.ticketNr}";
+        entryTimeLabel.Text = $"Eintrittszeit: {_ticket.entryTime}";
+        isPaidLabel.Text = $"Status: {_ticket.isPaid}";
     }
 	public void CurrentTime()
 	{
@@ -35,4 +37,11 @@ public partial class Dashboard : ContentPage
             return true;
 
 		});
-} }
+}
+    private async void PayButton(object sender, EventArgs e)
+    {
+        _ticket.isPaid = true;
+        await DisplayAlert("Ticket", "Du hast erfolgreich bezahlt", "OK");
+        await Navigation.PopAsync();
+    }
+}

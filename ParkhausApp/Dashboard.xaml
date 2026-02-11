@@ -4,10 +4,14 @@
              x:Class="ParkhausApp.Dashboard"
              Title="Dashboard">
     <VerticalStackLayout>
+        <Label Text="Ticket Details"/>
+        <Label x:Name="ticketNumberLabel"  Text="Ticket Nummer"/>
         <Label Text="Parkdauer"/>
         <Label x:Name="parkduration" Text=""/>
-        <Label Text="Parkkosten"/>
         <Label x:Name="parkprice" Text=""/>
-
+        <Label x:Name="entryTimeLabel" Text="Eintritts Zeit"/>
+        <Label x:Name="isPaidLabel" Text="Status"/>
+        <Button Text="Bezahlen"
+                Clicked="PayButton"/>
     </VerticalStackLayout>
 </ContentPage>
