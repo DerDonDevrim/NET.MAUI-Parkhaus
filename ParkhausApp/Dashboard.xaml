@@ -6,6 +6,8 @@
     <VerticalStackLayout>
         <Label Text="Parkdauer"/>
         <Label x:Name="parkduration" Text=""/>
+        <Label Text="Parkkosten"/>
+        <Label x:Name="parkprice" Text=""/>
 
     </VerticalStackLayout>
 </ContentPage>
