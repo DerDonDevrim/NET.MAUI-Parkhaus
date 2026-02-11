@@ -5,12 +5,13 @@
 
     <ScrollView>
         <VerticalStackLayout>
+            <Button x:Name="parking1" Text=""
+                    Clicked =  "chose"/>
+            <Button x:Name="parking2" Text=""
+                    Clicked =  "chose"/>
+            <Button x:Name="parking3" Text=""
+                    Clicked = "chose"/>
 
-            <Label Text ="Parkhaus Einfahrt"/>
-            <Label x:Name="barrier"  Text ="Schranke Geschlossen"/>
-            <Button Text="Schranke öffnen und Ticket lösen"
-                    Clicked="OpenBarrier"
-                    />
 
         </VerticalStackLayout>
     </ScrollView>

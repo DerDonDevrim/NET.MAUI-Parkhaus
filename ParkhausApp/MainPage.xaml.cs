@@ -5,29 +5,29 @@ namespace ParkhausApp
 {
     public partial class MainPage : ContentPage
     {
-        private Ticket? _currentTicket;
-        private int _nextTicketNumber = 0;
+        private ParkingGarage _parkingGarage;
+        private ParkingGarage parkingGarage1;
+        private ParkingGarage parkingGarage2;
+        private ParkingGarage parkingGarage3;
 
         public MainPage()
         {
-           InitializeComponent();
-           
-           
+            InitializeComponent();
+            var random = new Random();
+
+
+            parkingGarage1 = new ParkingGarage { garageName = "Parkhaus Bahnhof", parkingLots = 50, freeLots = random.Next(1, 51) };
+            parkingGarage2 = new ParkingGarage { garageName = "Parkhaus Spital", parkingLots = 50, freeLots = random.Next(1, 51) };
+            parkingGarage3 = new ParkingGarage { garageName = "Parkhaus City", parkingLots = 50, freeLots = random.Next(1, 51) };
+
+            parking1.Text = $"{parkingGarage1.garageName}\n{parkingGarage1.freeLots}/{parkingGarage1.parkingLots}";
+            parking2.Text = $"{parkingGarage2.garageName}\n{parkingGarage2.freeLots}/{parkingGarage3.parkingLots}";
+            parking3.Text = $"{parkingGarage3.garageName}\n{parkingGarage3.freeLots}/{parkingGarage3.parkingLots}";
         }
-        private async void OpenBarrier(object sender, EventArgs e)
+        private async void chose(object sender, EventArgs e)
         {
-            barrier.Text = "Schranke offen";
-            _currentTicket = new Ticket
-            {
-                ticketNr = _nextTicketNumber++,
-                entryTime = DateTime.Now,
-                isPaid = false
+            await Navigation.PushAsync(new Barrier());
 
-            };
-            await DisplayAlert("Ticket", "Du hast erfolgreich ein Ticket gelöst und kannst nun einfahren", "OK");
-            await Navigation.PushAsync(new Dashboard(_currentTicket));
-
-            barrier.Text = "Schranke geschlossen";
         }
 
 
