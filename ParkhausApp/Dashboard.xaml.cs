@@ -41,7 +41,7 @@ public partial class Dashboard : ContentPage
     private async void PayButton(object sender, EventArgs e)
     {
         _ticket.isPaid = true;
-        await DisplayAlert("Ticket", "Du whast erfolgreich bezahlt", "OK");
+        await DisplayAlert("Ticket", "Du hast erfolgreich bezahlt", "OK");
         await Navigation.PopToRootAsync();
 		
     }

@@ -2,15 +2,20 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ParkhausApp.Barrier"
-             Title="Barrier">
+             BackgroundColor="{StaticResource Background}">
     <ScrollView>
-        <VerticalStackLayout>
+        <VerticalStackLayout Padding="20" Spacing="14">
 
-            <Label Text ="Parkhaus Einfahrt"/>
-            <Label x:Name="barrier"  Text ="Schranke Geschlossen"/>
-            <Button Text="Schranke öffnen und Ticket lösen"
-                    Clicked="OpenBarrier"
+            <Label Text ="Parkhaus Einfahrt" Style="{StaticResource TitleLabel}"/>
+            <Frame Style="{StaticResource TicketFrame}">
+                <VerticalStackLayout Spacing="12">
+                    <Label x:Name="barrier"  Text ="Schranke Geschlossen" Style="{StaticResource TitleLabel}"/>
+                    
+                    <Button Text="Schranke öffnen und Ticket lösen"
+                           Clicked="OpenBarrier"
                     />
+                </VerticalStackLayout>
+            </Frame>
 
         </VerticalStackLayout>
     </ScrollView>

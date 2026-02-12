@@ -21,7 +21,7 @@ namespace ParkhausApp
             parkingGarage3 = new ParkingGarage { garageName = "Parkhaus City", parkingLots = 50, freeLots = random.Next(1, 51) };
 
             parking1.Text = $"{parkingGarage1.garageName}\n{parkingGarage1.freeLots}/{parkingGarage1.parkingLots}";
-            parking2.Text = $"{parkingGarage2.garageName}\n{parkingGarage2.freeLots}/{parkingGarage3.parkingLots}";
+            parking2.Text = $"{parkingGarage2.garageName}\n{parkingGarage2.freeLots}/{parkingGarage2.parkingLots}";
             parking3.Text = $"{parkingGarage3.garageName}\n{parkingGarage3.freeLots}/{parkingGarage3.parkingLots}";
         }
         private async void chose(object sender, EventArgs e)

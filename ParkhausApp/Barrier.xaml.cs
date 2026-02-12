@@ -3,7 +3,7 @@ namespace ParkhausApp;
 public partial class Barrier : ContentPage
 {
     private Ticket? _currentTicket;
-    private int _nextTicketNumber = 0;
+    private int _nextTicketNumber = 1;
 
     public Barrier()
     {
